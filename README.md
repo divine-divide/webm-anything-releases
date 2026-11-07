@@ -13,10 +13,10 @@ Each release has four files:
 | `install_release.py` | Installer, pinned to this release's version |
 | `release_common.py` | Helper the installer needs; keep it next to the installer |
 
-## Install v1.0.0
+## Install
 
 ```sh
-base=https://github.com/divine-divide/webm-anything-releases/releases/download/v1.0.0
+base=https://github.com/divine-divide/webm-anything-releases/releases/latest/download
 curl -fsSLO "$base/SHA256SUMS"
 curl -fsSLO "$base/install_release.py"
 curl -fsSLO "$base/release_common.py"
@@ -30,6 +30,11 @@ The installer downloads the archive from the same release, checks it against
 - `~/.local/bin/webm-anything`
 - a menu entry and icon (skip them with `--binary-only`)
 - the license and notices in `~/.local/share/doc/webm-anything/`
+
+Run the same commands again to update. For a specific version, replace
+`latest/download` with `download/v1.0.0` (or any tag on the
+[releases page](https://github.com/divine-divide/webm-anything-releases/releases));
+each release's installer is pinned to its own version.
 
 Make sure `~/.local/bin` is on your `PATH`. To install an archive you already
 downloaded, use
